@@ -124,12 +124,10 @@ def fertilizer_recommendation():
 
     return render_template('fertilizer.html', title=title)
 
-# render disease prediction input page
 
 
 # RENDER PREDICTION PAGES
 
-# render crop recommendation result page
 
 
 @ app.route('/crop-predict', methods=['POST'])
