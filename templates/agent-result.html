@@ -1,0 +1,68 @@
+{% extends 'layout.html' %} 
+
+{% block body %}
+<div class="container py-5">
+    
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h2 style="color: black;"><b>Agentic Action Plan</b></h2>
+            <h5 class="text-muted">Vision Model Diagnosis: <span class="badge badge-danger" style="font-size: 16px;">{{ disease_name }}</span></h5>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm" style="border-radius: 15px; border-top: 5px solid #007bff;">
+                <div class="card-body">
+                    <h5 class="card-title text-primary"><i class="fa fa-flask"></i> Soil Chemist</h5>
+                    <hr>
+                    <div style="font-size: 15px; color: #000000;">{{ soil_data | safe }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm" style="border-radius: 15px; border-top: 5px solid #dc3545;">
+                <div class="card-body">
+                    <h5 class="card-title text-danger"><i class="fa fa-bug"></i> Plant Pathologist</h5>
+                    <hr>
+                    <div style="font-size: 15px; color: #000000;">{{ pathology_data | safe }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm" style="border-radius: 15px; border-top: 5px solid #ffc107;">
+                <div class="card-body">
+                    <h5 class="card-title text-warning" style="color: #d39e00 !important;"><i class="fa fa-cloud"></i> Meteorologist</h5>
+                    <hr>
+                    <div style="font-size: 15px; color: #000000;">{{ weather_data | safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow" style="border-radius: 15px; border-left: 8px solid #28a745;">
+                <div class="card-header bg-white">
+                    <h4 class="mb-0 text-success"><b><i class="fa fa-check-circle"></i> Chief Coordinator Jury Prescription</b></h4>
+                </div>
+                <div class="card-body" style="background-color: #fcfcfc;">
+                    <div style="font-size: 17px; line-height: 1.6; color: black; font-weight: 500;">{{ final_prescription | safe }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{{ url_for('agentic_form') }}">
+            <button class="btn btn-info" style="color: white; font-weight: bold; border: 0; width: 150px; background-color: black; height: 50px; border-radius: 12px; font-size: 18px;">
+                Analyze Again
+            </button>
+        </a>
+    </div>
+
+</div>
+<br>
+{% endblock %}

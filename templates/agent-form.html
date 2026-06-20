@@ -1,0 +1,75 @@
+{% extends 'layout.html' %} 
+
+{% block body %}
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  <b>Initialize Multi-Agent AI Consultation</b>
+</h2>
+<p class="text-center mt-2 text-muted">Submit your soil metrics, location, and crop image for a comprehensive analysis.</p>
+<br />
+
+<div style="max-width: 800px; margin: 0px auto; color: black; border-radius: 25px; padding: 20px; background-color: #f8f9fa; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <form method="POST" action="{{ url_for('agentic_consultation') }}" enctype="multipart/form-data">
+    
+    <h4 class="mb-3" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;">1. Soil & Environment Metrics</h4>
+    <div class="row">
+        <div class="col-md-4 form-group">
+            <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen (N)</b></label>
+            <input type="number" class="form-control" name="nitrogen" placeholder="e.g. 40" style="font-weight: bold" required />
+        </div>
+        <div class="col-md-4 form-group">
+            <label for="Phosphorous" style="font-size: 17px"><b>Phosphorous (P)</b></label>
+            <input type="number" class="form-control" name="phosphorous" placeholder="e.g. 40" style="font-weight: bold" required />
+        </div>
+        <div class="col-md-4 form-group">
+            <label for="Pottasium" style="font-size: 17px"><b>Potassium (K)</b></label>
+            <input type="number" class="form-control" name="pottasium" placeholder="e.g. 40" style="font-weight: bold" required />
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-md-4 form-group">
+            <label for="ph" style="font-size: 17px"><b>pH Level</b></label>
+            <input type="number" step="0.01" class="form-control" name="ph" placeholder="e.g. 6.5" style="font-weight: bold" required />
+        </div>
+        <div class="col-md-4 form-group">
+            <label for="Rainfall" style="font-size: 17px"><b>Rainfall (mm)</b></label>
+            <input type="number" step="0.01" class="form-control" name="rainfall" placeholder="e.g. 200" style="font-weight: bold" required />
+        </div>
+        <div class="col-md-4 form-group">
+            <label for="City" style="font-size: 17px"><b>City (For Weather)</b></label>
+            <input type="text" class="form-control" name="city" placeholder="e.g. Pune" style="font-weight: bold" required />
+        </div>
+    </div>
+
+    <br>
+    <h4 class="mb-3" style="border-bottom: 2px solid #ddd; padding-bottom: 10px;">2. Visual Diagnosis</h4>
+    <div class="form-group">
+        <label for="inputfile" style="font-size: 17px"><b>Upload Crop Image</b></label>
+        <input type="file" name="file" class="form-control-file" id="inputfile" accept="image/*" onchange="preview_image(event)" style="font-weight: bold;">
+        <div class="text-center mt-3">
+            <img id="output-image" class="rounded mx-auto d-block" style="max-height: 250px;" />
+        </div>
+    </div>
+
+    <br>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-info" style="color: white; font-weight: bold; border: 0; width: 200px; background-color: black; height: 50px; border-radius: 12px; font-size: 21px;">
+        Run Agents
+      </button>
+    </div>
+  </form>
+</div>
+
+<script type="text/javascript">
+  function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('output-image')
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+<br><br>
+{% endblock %}

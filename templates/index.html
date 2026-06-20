@@ -1,0 +1,110 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<section class="banner_w3lspvt" id="home">
+	<div class="csslider infinity" id="slider1">
+
+		<div class="banner-top">
+			<div class="overlay">
+				<div class="container">
+					<div class="w3layouts-banner-info text-center">
+						<h3 class="text-wh">Yield Boost</h3>
+						<h4 class="text-wh mx-auto my-4"><b>Empower your farm with data-driven insights. (Focuses on
+								data-driven decision making)</b></h4>
+						<br>
+						<h4 class="text-wh mx-auto my-4"><strong> Get ready to explore a world of answers! Ask us
+								anything! about ...</strong></h4>
+						<p class="text-li mx-auto mt-2">
+							Crop <br>
+							Fertilizer <br>
+							Disease<br>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="blog py-5">
+	<div class="container py-md-5">
+		<h3 class="heading mb-sm-5 mb-4 text-center"> Our Services</h3>
+		<div class="row blog-grids">
+			<div class="col-lg-4 col-md-6 blog-left mb-lg-0 mb-sm-5 pb-lg-0 pb-5">
+				<img src="{{ url_for('static', filename='images/s3.jpg') }}" class="img-fluid" alt="" />
+				<a href="{{ url_for('crop_recommend') }}">
+					<div class="blog-info">
+
+						<h4>Crop</h4>
+
+						<p class="mt-2">I can suggest ideal crops for your specific conditions, tell me more about your
+							location, soil, water access, and desired seasonality.</p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6 blog-middle mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5">
+				<img src="{{ url_for('static', filename='images/s2.jpg') }}" class="img-fluid" alt="" />
+				<a href="{{ url_for('fertilizer_recommendation') }}">
+					<div class="blog-info">
+						<h4>Fertilizer</h4>
+						<p class="mt-2">Help me find the perfect match for your soil and harvest! Tell me about your
+							soil type and what you'd like to grow.</p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6 blog-right mt-lg-0 mt-5 pt-lg-0 pt-md-5">
+
+				<img src="{{ url_for('static', filename='images/s4.jpg') }}" class="img-fluid" alt="">
+
+
+				<a href="{{ url_for('disease_prediction') }}">
+					<div class="blog-info">
+						<h4>Crop Disease</h4>
+						<p class="mt-2">Uncover crop threats before they strike! Share details about your plants, and
+							I'll help diagnose potential diseases and suggest solutions.</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-lg-3 col-md-6 blog-right mt-lg-0 mt-5 pt-lg-0 pt-md-5">
+
+				<img src="{{ url_for('static', filename='images/core.jpg') }}" class="img-fluid" alt="">
+
+
+				<a href="/agentic-form">
+					<div class="blog-info">
+						<h4>Agentic AI</h4>
+						<p class="mt-2">Experience the ultimate farming assistant. Combine soil, weather, and vision
+							data into one master action plan using multi-agent LLMs.</p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="core-value py-5">
+	<div class="container py-md-4">
+		<h3 class="heading mb-sm-5 mb-4 text-center"> About Us</h3>
+		<div class="row core-grids">
+			<div class="col-lg-6 core-left">
+				<img src="{{ url_for('static', filename='images/core.jpg') }}" class="img-fluid" alt="" />
+			</div>
+			<div class="col-lg-6 core-right">
+				<h3 class="mt-4">Empowering farmers, enriching harvests, building a better future through agricultural
+					innovation.</h3>
+				<p class="mt-3">Don't reply on the guesswork and unlock bountiful harvests! Our advanced tech guides you
+					through every step of farming, from understanding local trends to protecting your crops for a
+					thriving outcome.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+</html>
+
+{% endblock %}
